@@ -28,7 +28,7 @@ export class UserService {
       )
       .subscribe((result: any) => {
         if (result && result.body && result.body.length) {
-          localStorage.setItem('user', JSON.stringify(result.body));
+          localStorage.setItem('user', JSON.stringify(result.body[0]));
           this.router.navigate(['/']);
           this.invalidUserAuth.next(false);
         } else {

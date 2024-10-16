@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductService } from '../services/product.service';
 import { Product } from '../data-type';
+import { SellerService } from '../services/seller.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -14,12 +15,22 @@ export class HeaderComponent implements OnInit {
   searchResult: undefined | Product[];
   searchInput: undefined | Product[];
 
-  constructor(private router: Router, private product: ProductService) {}
+  constructor(
+    private router: Router,
+    private product: ProductService,
+    private seller: SellerService
+  ) {}
 
   ngOnInit(): void {
     this.setUserType();
     this.router.events.subscribe(() => {
       this.setUserType();
+    });
+
+    this.seller.isSellerLoggedIn.subscribe((isLoggedIn) => {
+      if (isLoggedIn) {
+        this.setUserType();
+      }
     });
   }
 
@@ -28,13 +39,14 @@ export class HeaderComponent implements OnInit {
     const userDetail = localStorage.getItem('user');
 
     if (sellerDetail) {
-      const sellerData = sellerDetail && JSON.parse(sellerDetail)[0];
-      this.sellerName = sellerData.username;
       this.userType = 'seller';
+      const sellerData = sellerDetail && JSON.parse(sellerDetail);
+      this.sellerName = sellerData.username;
     } else if (userDetail) {
-      const userData = userDetail && JSON.parse(userDetail)[0];
-      this.userName = userData.username;
       this.userType = 'user';
+      const userData = userDetail && JSON.parse(userDetail);
+      this.userName = userData.username;
+
       console.log(this.userName);
     } else {
       this.userType = 'default';

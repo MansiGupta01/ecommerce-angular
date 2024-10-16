@@ -42,6 +42,42 @@
       "username": "madkjSA",
       "email": "SFAFAD",
       "password": "ADFVADF"
+    },
+    {
+      "id": "f67f",
+      "username": "seller1",
+      "email": "seller1@email.com",
+      "password": "seller1"
+    },
+    {
+      "id": "4963",
+      "username": "asdfghjkkl",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "385e",
+      "username": "mansi",
+      "email": "mansi1112000@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "8611",
+      "username": "scsafaf",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "2dfb",
+      "username": "asdfghjkkl",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "1961",
+      "username": "agsfhdt",
+      "email": "",
+      "password": ""
     }
   ],
   "user": [
@@ -80,6 +116,12 @@
       "username": "user5",
       "email": "user5@email.com",
       "password": "user5"
+    },
+    {
+      "id": "dbeb",
+      "username": "nlzjdngs",
+      "email": "",
+      "password": ""
     }
   ],
   "products": [
