@@ -9,15 +9,17 @@ import { Router } from '@angular/router';
 export class SellerService {
   isSellerLoggedIn = new BehaviorSubject<boolean>(false);
   isLoginError = new BehaviorSubject<boolean>(false);
+
   constructor(private http: HttpClient, private router: Router) {}
   sellerSignUp(data: SignUp) {
     this.http
       .post('http://localhost:3000/seller', data, { observe: 'response' })
       .subscribe((result) => {
-        this.isSellerLoggedIn.next(true);
-        localStorage.setItem('seller', JSON.stringify(result.body));
-        this.router.navigate(['seller-home']);
-        console.log(result);
+        if (result) {
+          localStorage.setItem('seller', JSON.stringify(result.body));
+          this.router.navigate(['seller-home']);
+          console.log(result);
+        }
       });
   }
   sellerLogin(data: Login) {
@@ -28,7 +30,7 @@ export class SellerService {
       )
       .subscribe((result: any) => {
         if (result && result.body && result.body.length) {
-          this.isSellerLoggedIn.next(true);
+          this.isLoginError.next(false);
           localStorage.setItem('seller', JSON.stringify(result.body));
           this.router.navigate(['seller-home']);
         } else {

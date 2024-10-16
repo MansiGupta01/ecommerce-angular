@@ -12,6 +12,36 @@
       "email": "asd@asd.com",
       "password": "123",
       "confirmPassword": "123"
+    },
+    {
+      "id": "f9f1",
+      "username": "asdfghjkkl",
+      "email": "bhbh",
+      "password": "czdv"
+    },
+    {
+      "id": "816b",
+      "username": "faf",
+      "email": "gsgs",
+      "password": "rgsr"
+    },
+    {
+      "id": "9fa9",
+      "username": "scscs",
+      "email": "SDs",
+      "password": "Dsd"
+    },
+    {
+      "id": "be85",
+      "username": "asdfghjkkl",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "404f",
+      "username": "madkjSA",
+      "email": "SFAFAD",
+      "password": "ADFVADF"
     }
   ],
   "user": [
@@ -32,6 +62,24 @@
       "username": "user3",
       "email": "user3@email.com",
       "password": "user3"
+    },
+    {
+      "id": "fd49",
+      "username": "fssfd",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "8dcf",
+      "username": "user4",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "98cb",
+      "username": "user5",
+      "email": "user5@email.com",
+      "password": "user5"
     }
   ],
   "products": [

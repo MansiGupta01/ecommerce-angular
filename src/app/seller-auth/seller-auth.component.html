@@ -1,7 +1,6 @@
 <div class="seller-auth">
   <div *ngIf="!showLogin" class="signup">
     <h1>Signup form</h1>
-    <p>{{ signupMessage }}</p>
     <form
       #signupForm="ngForm"
       (ngSubmit)="SignUp(signupForm.value)"

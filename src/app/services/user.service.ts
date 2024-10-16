@@ -3,7 +3,7 @@ import { Login, SignUp } from '../data-type';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
-
+import { HeaderComponent } from '../header/header.component';
 @Injectable({
   providedIn: 'root',
 })
@@ -14,8 +14,10 @@ export class UserService {
     this.http
       .post('http://localhost:3000/user', data, { observe: 'response' })
       .subscribe((result) => {
-        localStorage.setItem('user', JSON.stringify(result.body));
-        this.router.navigate(['/']);
+        if (result) {
+          localStorage.setItem('user', JSON.stringify(result.body));
+          this.router.navigate(['/']);
+        }
       });
   }
   userLogin(data: Login) {

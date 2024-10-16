@@ -28,12 +28,11 @@ export class HeaderComponent implements OnInit {
     const userDetail = localStorage.getItem('user');
 
     if (sellerDetail) {
-      const sellerData = JSON.parse(sellerDetail);
+      const sellerData = sellerDetail && JSON.parse(sellerDetail)[0];
       this.sellerName = sellerData.username;
-      console.log(this.sellerName);
       this.userType = 'seller';
     } else if (userDetail) {
-      const userData = JSON.parse(userDetail);
+      const userData = userDetail && JSON.parse(userDetail)[0];
       this.userName = userData.username;
       this.userType = 'user';
       console.log(this.userName);
@@ -44,12 +43,13 @@ export class HeaderComponent implements OnInit {
 
   sellerLogOut() {
     localStorage.removeItem('seller');
-    this.userType = 'default';
+    this.setUserType();
     this.router.navigate(['/']);
   }
+
   userLogOut() {
     localStorage.removeItem('user');
-    this.userType = 'default';
+    this.setUserType();
     this.router.navigate(['/user-auth']);
   }
   searchProduct(query: KeyboardEvent) {

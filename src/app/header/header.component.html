@@ -1,13 +1,13 @@
 <nav class="navheader">
   <h1><a routerLink="/" class="home">Home</a></h1>
-  <ul *ngIf="userType === 'default'">
+  <ul *ngIf="userType !== 'seller'">
     <li><a href="#">MEN</a></li>
     <li><a href="#">WOMEN</a></li>
     <li><a href="#">KIDS</a></li>
     <li><a href="#">HOME</a></li>
   </ul>
   <div
-    *ngIf="userType === 'default'"
+    *ngIf="userType !== 'seller'"
     class="searchbar"
     (keyup)="searchProduct($event)"
   >
