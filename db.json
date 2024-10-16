@@ -1,0 +1,75 @@
+{
+  "seller": [
+    {
+      "id": "1",
+      "username": "Mansi Gupta",
+      "email": "abc.gmail.com",
+      "Password": "123456789"
+    },
+    {
+      "id": "c856",
+      "username": "asd",
+      "email": "asd@asd.com",
+      "password": "123",
+      "confirmPassword": "123"
+    }
+  ],
+  "user": [
+    {
+      "id": "f330",
+      "email": "user1@email.com",
+      "password": "user1",
+      "username": "user1"
+    },
+    {
+      "id": "8903",
+      "username": "user2",
+      "email": "user2@email.com",
+      "password": "user2"
+    },
+    {
+      "id": "1b14",
+      "username": "user3",
+      "email": "user3@email.com",
+      "password": "user3"
+    }
+  ],
+  "products": [
+    {
+      "productName": "iphone2",
+      "description": "description ",
+      "price": "22222",
+      "color": "red,gree,blue,black,white",
+      "category": "category1",
+      "imageurl": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-card-40-iphone15hero-202309_FMT_WHH?wid=508&hei=472&fmt=p-jpg&qlt=95&.v=1693086369781",
+      "id": "6f00"
+    },
+    {
+      "id": "df64",
+      "productName": "phone2",
+      "description": "description2",
+      "price": 1234,
+      "color": "red,gree,blue,black,white",
+      "category": "category2",
+      "imageurl": ""
+    },
+    {
+      "productName": "product",
+      "description": "description",
+      "price": "1233",
+      "color": "red,gree,blue,black,white",
+      "category": "category3",
+      "imageurl": "http://example.com/image.jpg",
+      "id": "a328"
+    },
+    {
+      "productName": "product4",
+      "description": "description",
+      "price": "1233",
+      "color": "red,gree,blue,black,white",
+      "category": "category3",
+      "imageurl": "http://example.com/image.jpg",
+      "id": "037f"
+    }
+  ]
+}

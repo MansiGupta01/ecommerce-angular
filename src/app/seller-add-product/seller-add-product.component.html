@@ -1,0 +1,39 @@
+<div>
+    <h1>Add Product</h1>
+    <div>{{productMessage}}</div>
+    <div>
+        <form #addProduct="ngForm" (ngSubmit)="addNewProduct(addProduct.value)" class="">
+            <div>
+                <label for="name">Product Name:</label>
+                <input type="text" name="productName" ngModel placeholder="Product Name is required." />
+            </div>
+
+            <div>
+                <label for="description">Description:</label>
+                <textarea type="text" name="description" ngModel placeholder="Description is required."></textarea>
+            </div>
+
+            <div>
+                <label for="price">Price:</label>
+                <input type="number" name="price" ngModel placeholder=" Price must be a positive number." />
+            </div>
+
+            <div>
+                <label for="color">Product Colour:</label>
+                <input type="text" name="color" ngModel placeholder="Colour of Product." />
+            </div>
+
+            <div>
+                <label for="category">Category:</label>
+                <input type="text" name="category" ngModel placeholder="Category is required." />
+            </div>
+
+            <div>
+                <label for="imageUrl">Image URL:</label>
+                <input type="text" name="imageurl" ngModel placeholder="Image URL is required." />
+            </div>
+
+            <button type="submit">Add Product</button>
+        </form>
+    </div>
+</div>

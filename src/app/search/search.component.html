@@ -1,0 +1,17 @@
+<h1>Searched Product</h1>
+<div *ngFor="let item of searchResult">
+  <div>
+    <a routerLink="/details/{{ item.id }}"><img src="{{ item.imageurl }}" /></a>
+  </div>
+  <div class="productDetail">
+    <a routerLink="/details/{{ item.id }}">
+      <h6>{{ item.productName }}</h6>
+    </a>
+    <div>{{ item.price }}</div>
+    <div>{{ item.color }}</div>
+  </div>
+  <div>
+    <a routerLink="#">View Detail</a>
+    <a routerLink="#">Add to Cart</a>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="productDetail">
+  <div class="product-image">
+    <img
+      src="{{ productData?.imageurl }}"
+      alt="{{ productData?.productName }}"
+    />
+  </div>
+  <div class="product-details">
+    <h1 class="productName">{{ productData?.productName }}</h1>
+    <p class="price">{{ productData?.price }}</p>
+    <p class="category">{{ productData?.category }}</p>
+    <p class="product-description">
+      {{ productData?.description }}
+    </p>
+    <p class="color">{{ productData?.color }}</p>
+    <button class="buy-now">Buy now</button>
+    <button class="add-to-cart">Add to Cart</button>
+    <div class="quantity">
+      <button (click)="handleQuantity('decrease')">-</button>
+      <input type="text" value="{{ quantity }}" />
+      <button (click)="handleQuantity('increase')">+</button>
+    </div>
+  </div>
+</div>

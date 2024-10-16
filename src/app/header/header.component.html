@@ -1,0 +1,49 @@
+<nav class="navheader">
+  <h1><a routerLink="/" class="home">Home</a></h1>
+  <ul *ngIf="userType === 'default'">
+    <li><a href="#">MEN</a></li>
+    <li><a href="#">WOMEN</a></li>
+    <li><a href="#">KIDS</a></li>
+    <li><a href="#">HOME</a></li>
+  </ul>
+  <div
+    *ngIf="userType === 'default'"
+    class="searchbar"
+    (keyup)="searchProduct($event)"
+  >
+    <input
+      type="text"
+      #searchEvent
+      (blur)="hideSearchResult()"
+      placeholder="Search for products brand or more"
+    />
+    <button (click)="submitSearch(searchEvent.value)">Search</button>
+    <ul class="suggestedResult" *ngIf="searchResult">
+      <li *ngFor="let item of searchResult">
+        <a (mousedown)="redirectToProduct(item.id)">{{ item.productName }}</a>
+      </li>
+    </ul>
+  </div>
+  <div [ngSwitch]="userType">
+    <ul *ngSwitchCase="'user'">
+      <li><a (click)="userLogOut()" routerLink="/">LOGOUT</a></li>
+      <li>
+        <a routerLink="#">{{ userName | titlecase }}</a>
+      </li>
+    </ul>
+
+    <ul *ngSwitchCase="'seller'">
+      <li><a routerLink="/seller-addProduct">ADD PRODUCT</a></li>
+      <li><a routerLink="/seller-home">PRODUCT LIST</a></li>
+      <li><a (click)="sellerLogOut()" routerLink="/">LOGOUT</a></li>
+      <li>
+        <a routerLink="#">{{ sellerName | titlecase }}</a>
+      </li>
+    </ul>
+    <ul *ngSwitchCase="'default'">
+      <li><a routerLink="/seller-auth">SELLER</a></li>
+      <li><a routerLink="/user-auth">LOGIN/SIGNUP</a></li>
+      <li><a routerLink="#">CART(0)</a></li>
+    </ul>
+  </div>
+</nav>

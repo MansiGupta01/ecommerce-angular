@@ -1,0 +1,36 @@
+.navheader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 10px;
+    position: sticky;
+    top: 0;
+}
+.navheader ul{
+    list-style: none;
+    display: inline-flex;
+    margin: 0 10px;
+}
+.navheader li a{
+    text-decoration: none;
+    color: black;
+}
+.searchbar{
+    display: flex;
+    flex: 1;
+}
+.searchbar input{
+    flex: 1;
+    margin: 0 0 0 30px;
+    padding: 10px;
+    border: none;
+    background-color: rgb(236, 243, 244);
+}
+.searchbar button{
+    padding: 10px;
+    border: none;
+    background-color: rgb(236, 243, 244);
+}
+.navheader ul li{
+    padding: 0 10px;
+}
