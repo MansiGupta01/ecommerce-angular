@@ -14,7 +14,16 @@
     </p>
     <p class="color">{{ productData?.color }}</p>
     <button class="buy-now">Buy now</button>
-    <button class="add-to-cart">Add to Cart</button>
+    <button class="add-to-cart" *ngIf="!removeItem" (click)="addToCart()">
+      Add to Cart
+    </button>
+    <button
+      class="remove-from-cart"
+      *ngIf="removeItem"
+      (click)="removeFromCart(productData?.id)"
+    >
+      Remove from Cart
+    </button>
     <div class="quantity">
       <button (click)="handleQuantity('decrease')">-</button>
       <input type="text" value="{{ quantity }}" />

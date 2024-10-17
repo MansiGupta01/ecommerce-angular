@@ -43,7 +43,9 @@
     <ul *ngSwitchCase="'default'">
       <li><a routerLink="/seller-auth">SELLER</a></li>
       <li><a routerLink="/user-auth">LOGIN/SIGNUP</a></li>
-      <li><a routerLink="#">CART(0)</a></li>
+      <li>
+        <a routerLink="#">CART({{ cartItem }})</a>
+      </li>
     </ul>
   </div>
 </nav>

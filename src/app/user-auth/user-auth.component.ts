@@ -8,11 +8,13 @@ import { Login, SignUp } from '../data-type';
   styleUrls: ['./user-auth.component.scss'],
 })
 export class UserAuthComponent implements OnInit {
-  constructor(private user: UserService) {}
   signupMessage = '';
   loginErrorMessage = '';
   showLogin: boolean = true;
   authError = '';
+
+  constructor(private user: UserService) {}
+
   ngOnInit(): void {
     this.user.userAuthReload();
   }
